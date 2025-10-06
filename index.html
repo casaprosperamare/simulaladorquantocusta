@@ -5,13 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Simulador: Quanto Custa Começar? | Prospera Rio</title>
 
+  <!-- Tipografia padrão -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
 
   <style>
     /* ================================
        Padrão Visual – Prospera Rio
+       Paleta oficial
+       --azul-principal: #092040;
+       --azul-secundaria: #00B7D7;
+       --amarelo-acento: #ECC203;
+       --cinza-neutro:   #EFF1F3;
+       --azul-escuro:    #021738;
+       --branco:         #FFFFFF;
+       Tipografia: Montserrat (títulos) + Open Sans (texto)
        ================================ */
-    * { margin:0; padding:0; box-sizing:border-box; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
     :root{
       --azul-principal:#092040;
       --azul-secundaria:#00B7D7;
@@ -21,62 +31,175 @@
       --branco:#FFFFFF;
       --borda-suave:#E5E9EB;
     }
-    body{ font-family:'Open Sans',sans-serif; background:var(--cinza-neutro); color:var(--azul-escuro); line-height:1.6; padding:20px; }
+
+    body{
+      font-family:'Open Sans',sans-serif;
+      background:var(--cinza-neutro);
+      color:var(--azul-escuro);
+      line-height:1.6;
+      padding:20px;
+    }
+
     .container{ max-width:1200px; margin:0 auto; }
+
     .header{
       background:linear-gradient(135deg,var(--azul-principal) 0%,var(--azul-secundaria) 100%);
-      color:var(--branco); padding:48px 40px; border-radius:16px; text-align:center; margin-bottom:40px;
+      color:var(--branco);
+      padding:48px 40px;
+      border-radius:16px;
+      text-align:center;
+      margin-bottom:40px;
       box-shadow:0 10px 40px rgba(9,32,64,0.3);
     }
     .logo-container{ display:flex; flex-direction:column; align-items:center; gap:10px; margin-bottom:22px; }
     .logo{ max-width:200px; height:auto; }
-    .location-text{ font-size:.9rem; font-weight:700; letter-spacing:3px; color:var(--amarelo-acento); text-transform:uppercase; font-family:'Montserrat',sans-serif; }
-    .header h1{ font-family:'Montserrat',sans-serif; font-size:2.6rem; font-weight:700; margin-bottom:10px; text-shadow:2px 2px 4px rgba(0,0,0,0.2); }
-    .header p{ font-size:1.125rem; opacity:.95; }
-    .intro-card{ background:var(--branco); padding:28px 32px; border-radius:12px; margin:28px 0 30px; box-shadow:0 4px 20px rgba(0,0,0,0.08); border-left:6px solid var(--amarelo-acento); }
-    .intro-card h2{ font-family:'Montserrat',sans-serif; font-size:1.8rem; font-weight:700; color:var(--azul-principal); margin-bottom:12px; }
+    .location-text{
+      font-size:.9rem; font-weight:700; letter-spacing:3px; color:var(--amarelo-acento);
+      text-transform:uppercase; font-family:'Montserrat',sans-serif;
+    }
+    .header h1{
+      font-family:'Montserrat',sans-serif; font-size:2.6rem; font-weight:700; margin-bottom:10px;
+      text-shadow:2px 2px 4px rgba(0,0,0,0.2);
+    }
+    .header p{ font-size:1.125rem; opacity:.95; font-weight:400; }
+
+    .intro-card{
+      background:var(--branco);
+      padding:28px 32px;
+      border-radius:12px;
+      margin:28px 0 30px;
+      box-shadow:0 4px 20px rgba(0,0,0,0.08);
+      border-left:6px solid var(--amarelo-acento);
+    }
+    .intro-card h2{
+      font-family:'Montserrat',sans-serif; font-size:1.8rem; font-weight:700; color:var(--azul-principal); margin-bottom:12px;
+    }
+    .intro-card p{ font-size:1.05rem; color:var(--azul-escuro); }
+
     .main-grid{ display:grid; grid-template-columns:2fr 1fr; gap:30px; margin-bottom:30px; }
+
     .categorias-section{ display:flex; flex-direction:column; gap:20px; }
-    .categoria-card{ background:var(--branco); border-radius:12px; padding:24px 26px; box-shadow:0 4px 20px rgba(0,0,0,0.08); border-top:4px solid var(--azul-secundaria); }
-    .categoria-header{ display:flex; align-items:flex-start; gap:14px; margin-bottom:16px; padding-bottom:12px; border-bottom:2px solid var(--cinza-neutro); }
-    .categoria-badge{ min-width:36px; height:36px; border-radius:8px; background:var(--cinza-neutro); display:flex; align-items:center; justify-content:center; font-family:'Montserrat',sans-serif; font-size:.9rem; font-weight:700; color:var(--azul-principal); border:1px solid var(--borda-suave); }
-    .categoria-titulo h3{ font-family:'Montserrat',sans-serif; font-size:1.35rem; font-weight:700; color:var(--azul-principal); margin-bottom:4px; }
+
+    .categoria-card{
+      background:var(--branco);
+      border-radius:12px;
+      padding:24px 26px;
+      box-shadow:0 4px 20px rgba(0,0,0,0.08);
+      border-top:4px solid var(--azul-secundaria);
+    }
+
+    .categoria-header{
+      display:flex; align-items:flex-start; gap:14px; margin-bottom:16px; padding-bottom:12px; border-bottom:2px solid var(--cinza-neutro);
+    }
+
+    .categoria-badge{
+      min-width:36px; height:36px; border-radius:8px; background:var(--cinza-neutro);
+      display:flex; align-items:center; justify-content:center; font-family:'Montserrat',sans-serif;
+      font-size:.9rem; font-weight:700; color:var(--azul-principal); border:1px solid var(--borda-suave);
+    }
+
+    .categoria-titulo h3{
+      font-family:'Montserrat',sans-serif; font-size:1.35rem; font-weight:700; color:var(--azul-principal); margin-bottom:4px;
+    }
     .categoria-titulo p{ font-size:.95rem; color:var(--azul-secundaria); font-weight:600; }
-    .item-input{ display:grid; grid-template-columns:2fr 1fr auto; gap:12px; align-items:center; margin-bottom:10px; padding:12px; background:var(--cinza-neutro); border-radius:8px; transition:.3s; }
+
+    .item-input{
+      display:grid; grid-template-columns:2fr 1fr auto; gap:12px; align-items:center;
+      margin-bottom:10px; padding:12px; background:var(--cinza-neutro); border-radius:8px; transition:.3s;
+    }
     .item-input:hover{ background:#EAEFF2; }
+
     .sr-only{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0; }
-    .item-input input[type="text"], .item-input input[type="number"]{ padding:10px 14px; border:2px solid transparent; border-radius:6px; background:var(--branco); transition:.25s; }
-    .item-input input[type="number"]{ font-family:'Montserrat',sans-serif; font-size:1rem; font-weight:600; color:var(--azul-principal); text-align:right; }
-    .item-input input:focus{ outline:none; border-color:var(--azul-secundaria); }
-    .btn-remove{ background:transparent; border:none; color:#9A1A1A; font-size:1.1rem; cursor:pointer; padding:6px 10px; border-radius:6px; transition:.2s; }
+
+    .item-input input[type="text"],
+    .item-input input[type="number"]{
+      padding:10px 14px; border:2px solid transparent; border-radius:6px; background:var(--branco); transition:.25s;
+    }
+    .item-input input[type="text"]{ font-size:1rem; }
+    .item-input input[type="text"]:focus{ outline:none; border-color:var(--azul-secundaria); }
+
+    .item-input input[type="number"]{
+      font-family:'Montserrat',sans-serif; font-size:1rem; font-weight:600; color:var(--azul-principal); text-align:right;
+    }
+    .item-input input[type="number"]:focus{ outline:none; border-color:var(--amarelo-acento); }
+
+    .btn-remove{
+      background:transparent; border:none; color:#9A1A1A; font-size:1.1rem; cursor:pointer; padding:6px 10px; border-radius:6px; transition:.2s;
+    }
     .btn-remove:hover{ background:#FDECEC; }
-    .btn-add{ background:var(--azul-secundaria); color:var(--branco); border:none; padding:12px 16px; border-radius:8px; font-family:'Montserrat',sans-serif; font-size:.95rem; font-weight:700; cursor:pointer; margin-top:10px; transition:.25s; width:100%; }
+
+    .btn-add{
+      background:var(--azul-secundaria); color:var(--branco); border:none; padding:12px 16px; border-radius:8px;
+      font-family:'Montserrat',sans-serif; font-size:.95rem; font-weight:700; cursor:pointer; margin-top:10px; transition:.25s; width:100%;
+    }
     .btn-add:hover{ background:var(--azul-principal); transform:translateY(-2px); box-shadow:0 4px 12px rgba(0,183,215,.3); }
+
     .resumo-section{ position:sticky; top:20px; height:fit-content; }
-    .resumo-card{ background:var(--azul-principal); color:var(--branco); border-radius:12px; padding:26px; box-shadow:0 8px 30px rgba(9,32,64,.4); }
-    .resumo-card h3{ font-family:'Montserrat',sans-serif; font-size:1.6rem; font-weight:700; margin-bottom:18px; text-align:center; padding-bottom:12px; border-bottom:2px solid rgba(255,255,255,.2); }
-    .resumo-item{ display:flex; justify-content:space-between; align-items:center; padding:12px 0; border-bottom:1px solid rgba(255,255,255,.12); }
+
+    .resumo-card{
+      background:var(--azul-principal); color:var(--branco); border-radius:12px; padding:26px;
+      box-shadow:0 8px 30px rgba(9,32,64,.4);
+    }
+    .resumo-card h3{
+      font-family:'Montserrat',sans-serif; font-size:1.6rem; font-weight:700; margin-bottom:18px; text-align:center;
+      padding-bottom:12px; border-bottom:2px solid rgba(255,255,255,.2);
+    }
+
+    .resumo-item{
+      display:flex; justify-content:space-between; align-items:center; padding:12px 0; border-bottom:1px solid rgba(255,255,255,.12);
+    }
     .resumo-item:last-child{ border-bottom:none; }
     .resumo-label{ font-size:1rem; opacity:.9; }
     .resumo-valor{ font-family:'Montserrat',sans-serif; font-size:1.15rem; font-weight:700; color:var(--amarelo-acento); }
-    .total-investimento{ background:rgba(255,255,255,.08); padding:18px; border-radius:10px; margin-top:16px; text-align:center; backdrop-filter:blur(8px); }
+
+    .total-investimento{
+      background:rgba(255,255,255,.08); padding:18px; border-radius:10px; margin-top:16px; text-align:center; backdrop-filter:blur(8px);
+    }
     .total-label{ font-size:.95rem; margin-bottom:6px; opacity:.9; }
-    .total-valor{ font-family:'Montserrat',sans-serif; font-size:2.4rem; font-weight:700; color:var(--amarelo-acento); text-shadow:2px 2px 4px rgba(0,0,0,.2); }
+    .total-valor{
+      font-family:'Montserrat',sans-serif; font-size:2.4rem; font-weight:700; color:var(--amarelo-acento);
+      text-shadow:2px 2px 4px rgba(0,0,0,.2);
+    }
+
     .analise-card{ background:var(--branco); padding:18px; border-radius:10px; margin-top:18px; color:var(--azul-escuro); }
     .analise-card h4{ font-family:'Montserrat',sans-serif; font-size:1.1rem; font-weight:700; color:var(--azul-principal); margin-bottom:12px; }
-    .analise-item{ display:flex; gap:10px; padding:10px; margin-bottom:8px; border-radius:6px; background:var(--cinza-neutro); align-items:flex-start; }
-    .analise-icon{ display:inline-flex; align-items:center; justify-content:center; width:22px; height:22px; border-radius:4px; font-weight:700; font-family:'Montserrat',sans-serif; font-size:.85rem; background:var(--azul-secundaria); color:var(--branco); flex:0 0 22px; }
+    .analise-item{
+      display:flex; gap:10px; padding:10px; margin-bottom:8px; border-radius:6px; background:var(--cinza-neutro); align-items:flex-start;
+    }
+    .analise-icon{
+      display:inline-flex; align-items:center; justify-content:center; width:22px; height:22px; border-radius:4px;
+      font-weight:700; font-family:'Montserrat',sans-serif; font-size:.85rem; background:var(--azul-secundaria); color:var(--branco);
+      flex:0 0 22px;
+    }
     .analise-text{ font-size:.95rem; line-height:1.5; }
-    .dicas-finais{ background:linear-gradient(135deg,#FFF9E6 0%, var(--branco) 100%); padding:28px 30px; border-radius:12px; margin-top:28px; border-left:6px solid var(--amarelo-acento); box-shadow:0 4px 20px rgba(0,0,0,.08); }
-    .dicas-finais h3{ font-family:'Montserrat',sans-serif; font-size:1.35rem; font-weight:700; color:var(--azul-principal); margin-bottom:14px; }
+
+    .dicas-finais{
+      background:linear-gradient(135deg,#FFF9E6 0%, var(--branco) 100%);
+      padding:28px 30px; border-radius:12px; margin-top:28px; border-left:6px solid var(--amarelo-acento);
+      box-shadow:0 4px 20px rgba(0,0,0,.08);
+    }
+    .dicas-finais h3{
+      font-family:'Montserrat',sans-serif; font-size:1.35rem; font-weight:700; color:var(--azul-principal); margin-bottom:14px;
+    }
     .dicas-finais ul{ list-style:none; }
     .dicas-finais li{ padding:10px 0 10px 28px; position:relative; font-size:1.02rem; line-height:1.65; }
-    .dicas-finais li:before{ content:""; position:absolute; left:0; top:14px; width:10px; height:10px; border-radius:2px; background:var(--amarelo-acento); box-shadow:0 0 0 3px rgba(236,194,3,.25); }
+    .dicas-finais li:before{
+      content:""; position:absolute; left:0; top:14px; width:10px; height:10px; border-radius:2px; background:var(--amarelo-acento);
+      box-shadow:0 0 0 3px rgba(236,194,3,.25);
+    }
+
     .action-buttons{ display:flex; gap:14px; margin-top:26px; flex-wrap:wrap; }
-    .btn{ flex:1; min-width:220px; padding:14px 22px; border:none; border-radius:10px; font-family:'Montserrat',sans-serif; font-size:1.05rem; font-weight:700; cursor:pointer; transition:.25s; text-align:center; }
-    .btn-primary{ background:var(--amarelo-acento); color:var(--azul-principal); box-shadow:0 4px 15px rgba(236,194,3,.3); }
+    .btn{
+      flex:1; min-width:220px; padding:14px 22px; border:none; border-radius:10px; font-family:'Montserrat',sans-serif;
+      font-size:1.05rem; font-weight:700; cursor:pointer; transition:.25s; text-align:center;
+    }
+    .btn-primary{
+      background:var(--amarelo-acento); color:var(--azul-principal); box-shadow:0 4px 15px rgba(236,194,3,.3);
+    }
     .btn-primary:hover{ background:#d4a803; transform:translateY(-2px); box-shadow:0 6px 20px rgba(236,194,3,.4); }
-    .btn-secondary{ background:var(--azul-secundaria); color:var(--branco); box-shadow:0 4px 15px rgba(0,183,215,.3); }
+    .btn-secondary{
+      background:var(--azul-secundaria); color:var(--branco); box-shadow:0 4px 15px rgba(0,183,215,.3);
+    }
     .btn-secondary:hover{ background:var(--azul-principal); transform:translateY(-2px); }
 
     @media print{
@@ -86,12 +209,23 @@
       .header{ border-radius:0; box-shadow:none; }
       .intro-card, .categoria-card, .resumo-card, .dicas-finais{ box-shadow:none; }
     }
-    @media (max-width:992px){ .main-grid{ grid-template-columns:1fr; } .resumo-section{ position:static; } }
-    @media (max-width:768px){ .header h1{ font-size:2rem; } .item-input{ grid-template-columns:1fr; } .total-valor{ font-size:2rem; } .action-buttons{ flex-direction:column; } .btn{ width:100%; } }
+
+    @media (max-width: 992px){
+      .main-grid{ grid-template-columns:1fr; }
+      .resumo-section{ position:static; }
+    }
+    @media (max-width: 768px){
+      .header h1{ font-size:2rem; }
+      .item-input{ grid-template-columns:1fr; }
+      .total-valor{ font-size:2rem; }
+      .action-buttons{ flex-direction:column; }
+      .btn{ width:100%; }
+    }
   </style>
 </head>
 <body>
   <div class="container">
+    <!-- HEADER -->
     <header class="header" role="banner">
       <div class="logo-container">
         <img class="logo" src="https://lh3.googleusercontent.com/d/1x5sNkC9vd7CI78y0xdkWvgoadxPEMcIf=w800" alt="Prospera Rio — Logomarca" />
@@ -101,15 +235,19 @@
       <p>Calcule o investimento inicial necessário para tirar sua ideia do papel.</p>
     </header>
 
+    <!-- INTRO -->
     <section class="intro-card" aria-labelledby="porque-calcular">
       <h2 id="porque-calcular">Por que calcular os custos iniciais?</h2>
-      <p>Liste seus gastos de início com clareza para planejar melhor e evitar surpresas. Preencha com honestidade e realismo.</p>
+      <p>Antes de abrir qualquer negócio, você precisa saber quanto dinheiro será necessário no começo. Este simulador ajuda a listar e somar os gastos iniciais com clareza, para que você se planeje melhor e evite surpresas. Preencha com honestidade e realismo.</p>
     </section>
 
+    <!-- GRID -->
     <main class="main-grid">
+      <!-- COLUNA ESQUERDA: CATEGORIAS -->
       <section class="categorias-section" aria-label="Categorias de custos iniciais">
-        <!-- EQUIPAMENTOS -->
-        <article class="categoria-card" data-categoria="equipamentos" aria-labelledby="t-equip">
+
+        <!-- EQUIPAMENTOS E FERRAMENTAS -->
+        <article class="categoria-card" aria-labelledby="t-equip">
           <div class="categoria-header">
             <div class="categoria-badge" aria-hidden="true">EQ</div>
             <div class="categoria-titulo">
@@ -117,20 +255,22 @@
               <p>Itens essenciais para produzir ou prestar o serviço</p>
             </div>
           </div>
-          <div class="itens" id="equipamentos-container">
+
+          <div id="equipamentos-container">
             <div class="item-input">
               <label class="sr-only" for="equip-nome-1">Descrição do item</label>
-              <input id="equip-nome-1" type="text" placeholder="Ex: Celular com câmera" class="item-nome">
+              <input id="equip-nome-1" type="text" placeholder="Ex: Celular com câmera" class="item-nome" aria-label="Descrição do item em Equipamentos">
               <label class="sr-only" for="equip-valor-1">Valor do item</label>
-              <input id="equip-valor-1" type="number" placeholder="0" min="0" step="0.01" class="item-valor" data-categoria="equipamentos">
-              <button class="btn-remove" type="button" title="Remover item">×</button>
+              <input id="equip-valor-1" type="number" placeholder="0" min="0" step="0.01" class="item-valor" data-categoria="equipamentos" aria-label="Valor do item em Equipamentos">
+              <button class="btn-remove" type="button" title="Remover item" aria-label="Remover item" onclick="removerItem(this)">×</button>
             </div>
           </div>
-          <button class="btn-add" type="button" data-add="equipamentos">+ Adicionar Item</button>
+
+          <button class="btn-add" type="button" onclick="adicionarItem('equipamentos')">+ Adicionar Item</button>
         </article>
 
         <!-- MATÉRIA-PRIMA -->
-        <article class="categoria-card" data-categoria="materiaprima" aria-labelledby="t-mp">
+        <article class="categoria-card" aria-labelledby="t-mp">
           <div class="categoria-header">
             <div class="categoria-badge" aria-hidden="true">MP</div>
             <div class="categoria-titulo">
@@ -138,20 +278,22 @@
               <p>Materiais para produzir as primeiras unidades</p>
             </div>
           </div>
-          <div class="itens" id="materiaprima-container">
+
+          <div id="materiaprima-container">
             <div class="item-input">
               <label class="sr-only" for="mp-nome-1">Descrição do item</label>
-              <input id="mp-nome-1" type="text" placeholder="Ex: Tecido para 20 peças" class="item-nome">
+              <input id="mp-nome-1" type="text" placeholder="Ex: Tecido para 20 peças" class="item-nome" aria-label="Descrição do item em Matéria-Prima">
               <label class="sr-only" for="mp-valor-1">Valor do item</label>
-              <input id="mp-valor-1" type="number" placeholder="0" min="0" step="0.01" class="item-valor" data-categoria="materiaprima">
-              <button class="btn-remove" type="button" title="Remover item">×</button>
+              <input id="mp-valor-1" type="number" placeholder="0" min="0" step="0.01" class="item-valor" data-categoria="materiaprima" aria-label="Valor do item em Matéria-Prima">
+              <button class="btn-remove" type="button" title="Remover item" aria-label="Remover item" onclick="removerItem(this)">×</button>
             </div>
           </div>
-          <button class="btn-add" type="button" data-add="materiaprima">+ Adicionar Item</button>
+
+          <button class="btn-add" type="button" onclick="adicionarItem('materiaprima')">+ Adicionar Item</button>
         </article>
 
         <!-- MARKETING -->
-        <article class="categoria-card" data-categoria="marketing" aria-labelledby="t-mkt">
+        <article class="categoria-card" aria-labelledby="t-mkt">
           <div class="categoria-header">
             <div class="categoria-badge" aria-hidden="true">MK</div>
             <div class="categoria-titulo">
@@ -159,20 +301,22 @@
               <p>Divulgação, redes sociais e materiais visuais</p>
             </div>
           </div>
-          <div class="itens" id="marketing-container">
+
+          <div id="marketing-container">
             <div class="item-input">
               <label class="sr-only" for="mkt-nome-1">Descrição do item</label>
-              <input id="mkt-nome-1" type="text" placeholder="Ex: Cartões de visita" class="item-nome">
+              <input id="mkt-nome-1" type="text" placeholder="Ex: Cartões de visita" class="item-nome" aria-label="Descrição do item em Marketing">
               <label class="sr-only" for="mkt-valor-1">Valor do item</label>
-              <input id="mkt-valor-1" type="number" placeholder="0" min="0" step="0.01" class="item-valor" data-categoria="marketing">
-              <button class="btn-remove" type="button" title="Remover item">×</button>
+              <input id="mkt-valor-1" type="number" placeholder="0" min="0" step="0.01" class="item-valor" data-categoria="marketing" aria-label="Valor do item em Marketing">
+              <button class="btn-remove" type="button" title="Remover item" aria-label="Remover item" onclick="removerItem(this)">×</button>
             </div>
           </div>
-          <button class="btn-add" type="button" data-add="marketing">+ Adicionar Item</button>
+
+          <button class="btn-add" type="button" onclick="adicionarItem('marketing')">+ Adicionar Item</button>
         </article>
 
         <!-- FORMALIZAÇÃO -->
-        <article class="categoria-card" data-categoria="formalizacao" aria-labelledby="t-form">
+        <article class="categoria-card" aria-labelledby="t-form">
           <div class="categoria-header">
             <div class="categoria-badge" aria-hidden="true">FM</div>
             <div class="categoria-titulo">
@@ -180,20 +324,22 @@
               <p>Registros, alvarás e taxas iniciais</p>
             </div>
           </div>
-          <div class="itens" id="formalizacao-container">
+
+          <div id="formalizacao-container">
             <div class="item-input">
               <label class="sr-only" for="form-nome-1">Descrição do item</label>
-              <input id="form-nome-1" type="text" placeholder="Ex: Registro MEI (gratuito)" class="item-nome">
+              <input id="form-nome-1" type="text" placeholder="Ex: Registro MEI (gratuito)" class="item-nome" aria-label="Descrição do item em Formalização">
               <label class="sr-only" for="form-valor-1">Valor do item</label>
-              <input id="form-valor-1" type="number" placeholder="0" min="0" step="0.01" class="item-valor" data-categoria="formalizacao">
-              <button class="btn-remove" type="button" title="Remover item">×</button>
+              <input id="form-valor-1" type="number" placeholder="0" min="0" step="0.01" class="item-valor" data-categoria="formalizacao" aria-label="Valor do item em Formalização">
+              <button class="btn-remove" type="button" title="Remover item" aria-label="Remover item" onclick="removerItem(this)">×</button>
             </div>
           </div>
-          <button class="btn-add" type="button" data-add="formalizacao">+ Adicionar Item</button>
+
+          <button class="btn-add" type="button" onclick="adicionarItem('formalizacao')">+ Adicionar Item</button>
         </article>
 
         <!-- OUTROS -->
-        <article class="categoria-card" data-categoria="outros" aria-labelledby="t-outros">
+        <article class="categoria-card" aria-labelledby="t-outros">
           <div class="categoria-header">
             <div class="categoria-badge" aria-hidden="true">OU</div>
             <div class="categoria-titulo">
@@ -201,41 +347,66 @@
               <p>Transporte, treinamentos e reserva de emergência</p>
             </div>
           </div>
-          <div class="itens" id="outros-container">
+
+          <div id="outros-container">
             <div class="item-input">
               <label class="sr-only" for="out-nome-1">Descrição do item</label>
-              <input id="out-nome-1" type="text" placeholder="Ex: Curso online básico" class="item-nome">
+              <input id="out-nome-1" type="text" placeholder="Ex: Curso online básico" class="item-nome" aria-label="Descrição do item em Outros">
               <label class="sr-only" for="out-valor-1">Valor do item</label>
-              <input id="out-valor-1" type="number" placeholder="0" min="0" step="0.01" class="item-valor" data-categoria="outros">
-              <button class="btn-remove" type="button" title="Remover item">×</button>
+              <input id="out-valor-1" type="number" placeholder="0" min="0" step="0.01" class="item-valor" data-categoria="outros" aria-label="Valor do item em Outros">
+              <button class="btn-remove" type="button" title="Remover item" aria-label="Remover item" onclick="removerItem(this)">×</button>
             </div>
           </div>
-          <button class="btn-add" type="button" data-add="outros">+ Adicionar Item</button>
+
+          <button class="btn-add" type="button" onclick="adicionarItem('outros')">+ Adicionar Item</button>
         </article>
       </section>
 
+      <!-- COLUNA DIREITA: RESUMO -->
       <aside class="resumo-section" aria-label="Resumo de investimento">
         <div class="resumo-card">
           <h3>Resumo de Investimento</h3>
-          <div class="resumo-item"><span class="resumo-label">Equipamentos</span><span class="resumo-valor" id="total-equipamentos">R$ 0,00</span></div>
-          <div class="resumo-item"><span class="resumo-label">Matéria-Prima</span><span class="resumo-valor" id="total-materiaprima">R$ 0,00</span></div>
-          <div class="resumo-item"><span class="resumo-label">Marketing</span><span class="resumo-valor" id="total-marketing">R$ 0,00</span></div>
-          <div class="resumo-item"><span class="resumo-label">Formalização</span><span class="resumo-valor" id="total-formalizacao">R$ 0,00</span></div>
-          <div class="resumo-item"><span class="resumo-label">Outros</span><span class="resumo-valor" id="total-outros">R$ 0,00</span></div>
+
+          <div class="resumo-item">
+            <span class="resumo-label">Equipamentos</span>
+            <span class="resumo-valor" id="total-equipamentos">R$ 0,00</span>
+          </div>
+          <div class="resumo-item">
+            <span class="resumo-label">Matéria-Prima</span>
+            <span class="resumo-valor" id="total-materiaprima">R$ 0,00</span>
+          </div>
+          <div class="resumo-item">
+            <span class="resumo-label">Marketing</span>
+            <span class="resumo-valor" id="total-marketing">R$ 0,00</span>
+          </div>
+          <div class="resumo-item">
+            <span class="resumo-label">Formalização</span>
+            <span class="resumo-valor" id="total-formalizacao">R$ 0,00</span>
+          </div>
+          <div class="resumo-item">
+            <span class="resumo-label">Outros</span>
+            <span class="resumo-valor" id="total-outros">R$ 0,00</span>
+          </div>
+
           <div class="total-investimento">
             <div class="total-label">TOTAL NECESSÁRIO</div>
             <div class="total-valor" id="total-geral">R$ 0,00</div>
           </div>
+
           <div class="analise-card" aria-live="polite">
             <h4>Análise Rápida</h4>
             <div id="analise-content">
-              <div class="analise-item"><span class="analise-icon" aria-hidden="true">i</span><span class="analise-text">Preencha os campos para ver sua análise personalizada.</span></div>
+              <div class="analise-item">
+                <span class="analise-icon" aria-hidden="true">i</span>
+                <span class="analise-text">Preencha os campos para ver sua análise personalizada.</span>
+              </div>
             </div>
           </div>
         </div>
       </aside>
     </main>
 
+    <!-- DICAS -->
     <section class="dicas-finais" aria-labelledby="dicas-investimento">
       <h3 id="dicas-investimento">Dicas Importantes sobre Investimento Inicial</h3>
       <ul>
@@ -244,198 +415,213 @@
         <li><strong>Tenha reserva:</strong> considere adicionar 20% para imprevistos.</li>
         <li><strong>Priorize:</strong> diferencie o que é essencial do que pode esperar.</li>
         <li><strong>Busque apoio:</strong> microcrédito e programas para jovens empreendedores.</li>
-        <li><strong>Valide antes:</strong> teste sua ideia em pequena escala antes de investir alto.</li>
+        <li><strong>Valide antes:</strong> teste sua ideia em pequeno escala antes de investir alto.</li>
       </ul>
     </section>
 
+    <!-- AÇÕES -->
     <div class="action-buttons">
-      <button class="btn btn-primary" type="button" id="btnSalvar">Salvar Cálculo</button>
-      <button class="btn btn-secondary" type="button" id="btnImprimir">Imprimir Resumo</button>
+      <button class="btn btn-primary" type="button" onclick="salvarCalculadora()">Salvar Cálculo</button>
+      <button class="btn btn-secondary" type="button" onclick="window.print()">Imprimir Resumo</button>
     </div>
   </div>
 
   <script>
-    (function(){
-      var CATEGORIAS = ['equipamentos','materiaprima','marketing','formalizacao','outros'];
+    // ======================
+    // Utilidades
+    // ======================
+    const CATEGORIAS = ['equipamentos','materiaprima','marketing','formalizacao','outros'];
 
-      function formatarMoeda(n){
-        var v = Number(n);
-        if (!isFinite(v)) v = 0;
-        return v.toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
-      }
+    function formatarMoeda(valor){
+      return (valor || 0).toLocaleString('pt-BR',{ style:'currency', currency:'BRL' });
+    }
 
-      function somarCategoria(cat){
-        var inputs = document.querySelectorAll('input.item-valor[data-categoria="'+cat+'"]');
-        var total = 0;
-        for (var i=0;i<inputs.length;i++){
-          var val = parseFloat(inputs[i].value);
-          if (isNaN(val)) val = 0;
-          total += val;
-        }
-        return total;
-      }
+    function somarCategoria(cat){
+      const inputs = document.querySelectorAll(`input[data-categoria="${cat}"]`);
+      let total = 0;
+      inputs.forEach(i => { total += parseFloat(i.value || 0); });
+      return total;
+    }
 
-      function calcularTotais(){
-        var totalGeral = 0;
-        for (var i=0;i<CATEGORIAS.length;i++){
-          var cat = CATEGORIAS[i];
-          var t = somarCategoria(cat);
-          var alvo = document.getElementById('total-'+cat);
-          if (alvo) alvo.textContent = formatarMoeda(t);
-          totalGeral += t;
-        }
-        var tg = document.getElementById('total-geral');
-        if (tg) tg.textContent = formatarMoeda(totalGeral);
-        atualizarAnalise(totalGeral);
-      }
+    function calcularTotais(){
+      let totalGeral = 0;
+      CATEGORIAS.forEach(cat => {
+        const totalCat = somarCategoria(cat);
+        document.getElementById(`total-${cat}`).textContent = formatarMoeda(totalCat);
+        totalGeral += totalCat;
+      });
+      document.getElementById('total-geral').textContent = formatarMoeda(totalGeral);
+      atualizarAnalise(totalGeral);
+    }
 
-      function atualizarAnalise(total){
-        var container = document.getElementById('analise-content');
-        if (!container) return;
-        var html = '';
-        if (!total || total === 0){
-          html = '<div class="analise-item"><span class="analise-icon">i</span><span class="analise-text">Preencha os valores para ver sua análise.</span></div>';
-        } else if (total < 500){
-          html  = '<div class="analise-item"><span class="analise-icon">OK</span><span class="analise-text">Investimento baixo — execução rápida é possível.</span></div>';
-          html += '<div class="analise-item"><span class="analise-icon">%</span><span class="analise-text">Reserva sugerida (20%): '+formatarMoeda(total*0.2)+'.</span></div>';
-        } else if (total < 2000){
-          html  = '<div class="analise-item"><span class="analise-icon">!</span><span class="analise-text">Investimento moderado — planeje as etapas antes de gastar.</span></div>';
-          html += '<div class="analise-item"><span class="analise-icon">%</span><span class="analise-text">Com reserva (20%): '+formatarMoeda(total*1.2)+'.</span></div>';
-          html += '<div class="analise-item"><span class="analise-icon">→</span><span class="analise-text">Pesquise linhas de microcrédito e apoios locais.</span></div>';
-        } else {
-          html  = '<div class="analise-item"><span class="analise-icon">!</span><span class="analise-text">Investimento alto — valide a proposta e o canal de vendas antes.</span></div>';
-          html += '<div class="analise-item"><span class="analise-icon">%</span><span class="analise-text">Com reserva (20%): '+formatarMoeda(total*1.2)+'.</span></div>';
-          html += '<div class="analise-item"><span class="analise-icon">↓</span><span class="analise-text">Revise o que pode ser adiado ou feito com menor custo.</span></div>';
-          html += '<div class="analise-item"><span class="analise-icon">+</span><span class="analise-text">Considere parceiros/sócios para dividir o investimento.</span></div>';
-        }
-        container.innerHTML = html;
-      }
+    function atualizarAnalise(total){
+      const container = document.getElementById('analise-content');
+      let html = '';
 
-      // Delegação de eventos para toda a página
-      function onBodyClick(e){
-        var t = e.target;
-
-        // Adicionar item
-        if (t && t.matches && t.matches('button[data-add]')){
-          var categoria = t.getAttribute('data-add');
-          var container = document.getElementById(categoria+'-container');
-          if (!container) return;
-          var idx = container.querySelectorAll('.item-input').length + 1;
-          var prefix = (categoria==='equipamentos'?'equip':categoria==='materiaprima'?'mp':categoria==='marketing'?'mkt':categoria==='formalizacao'?'form':'out');
-          var wrap = document.createElement('div');
-          wrap.className = 'item-input';
-          wrap.innerHTML =
-            '<label class="sr-only" for="'+prefix+'-nome-'+idx+'">Descrição do item</label>'+
-            '<input id="'+prefix+'-nome-'+idx+'" type="text" placeholder="Descreva o item" class="item-nome">'+
-            '<label class="sr-only" for="'+prefix+'-valor-'+idx+'">Valor do item</label>'+
-            '<input id="'+prefix+'-valor-'+idx+'" type="number" placeholder="0" min="0" step="0.01" class="item-valor" data-categoria="'+categoria+'">'+
-            '<button class="btn-remove" type="button" title="Remover item">×</button>';
-          container.appendChild(wrap);
-          calcularTotais();
-          return;
-        }
-
-        // Remover item
-        if (t && t.matches && t.matches('.btn-remove')){
-          var item = t.closest ? t.closest('.item-input') : null;
-          if (!item) return;
-          var parent = item.parentNode;
-          if (parent && parent.children.length > 1){
-            parent.removeChild(item);
-            calcularTotais();
-          } else {
-            alert('Mantenha pelo menos um campo em cada categoria.');
-          }
-          return;
-        }
-
-        // Salvar
-        if (t && t.id === 'btnSalvar'){
-          salvarCalculadora();
-          return;
-        }
-
-        // Imprimir
-        if (t && t.id === 'btnImprimir'){
-          window.print();
-          return;
-        }
-      }
-
-      // Qualquer digitação / alteração em inputs numéricos recalcula
-      function onBodyInput(e){
-        var t = e.target;
-        if (t && t.matches && t.matches('input.item-valor')){
-          calcularTotais();
-        }
-      }
-      function onBodyChange(e){
-        var t = e.target;
-        if (t && t.matches && t.matches('input.item-valor')){
-          calcularTotais();
-        }
-      }
-
-      function salvarCalculadora(){
-        var conteudo = 'SIMULADOR DE CUSTOS INICIAIS — PROSPERA RIO\n' + Array(60).fill('=').join('') + '\n\n';
-        var totais = 0;
-        for (var i=0;i<CATEGORIAS.length;i++){
-          var cat = CATEGORIAS[i];
-          var titulo = (
-            cat==='equipamentos' ? 'EQUIPAMENTOS E FERRAMENTAS' :
-            cat==='materiaprima' ? 'MATÉRIA-PRIMA E ESTOQUE INICIAL' :
-            cat==='marketing' ? 'COMUNICAÇÃO E MARKETING' :
-            cat==='formalizacao' ? 'FORMALIZAÇÃO E DOCUMENTOS' : 'OUTROS CUSTOS'
-          );
-          conteudo += titulo + '\n' + Array(titulo.length).fill('-').join('') + '\n';
-
-          var blocos = document.querySelectorAll('#'+cat+'-container .item-input');
-          var subtotal = 0;
-          for (var j=0;j<blocos.length;j++){
-            var nomeEl = blocos[j].querySelector('.item-nome');
-            var valorEl = blocos[j].querySelector('.item-valor');
-            var nome = (nomeEl && nomeEl.value ? nomeEl.value.trim() : '') || 'Item sem nome';
-            var valor = valorEl && parseFloat(valorEl.value);
-            if (isNaN(valor)) valor = 0;
-            subtotal += valor;
-            conteudo += '  • ' + nome + ': ' + formatarMoeda(valor) + '\n';
-          }
-          conteudo += 'Subtotal: ' + formatarMoeda(subtotal) + '\n\n';
-          totais += subtotal;
-        }
-        conteudo += Array(60).fill('=').join('') + '\n';
-        conteudo += 'TOTAL GERAL: ' + formatarMoeda(totais) + '\n';
-        conteudo += Array(60).fill('=').join('') + '\n';
-
-        try{
-          var blob = new Blob([conteudo], { type:'text/plain;charset=utf-8' });
-          var url = URL.createObjectURL(blob);
-          var a = document.createElement('a');
-          a.href = url;
-          a.download = 'Simulador_Custos_Iniciais_Prospera_Rio.txt';
-          document.body.appendChild(a);
-          a.click();
-          a.parentNode.removeChild(a);
-          URL.revokeObjectURL(url);
-        }catch(err){
-          alert('Não foi possível salvar o arquivo. Copie o texto a seguir:\\n\\n' + conteudo);
-        }
-      }
-
-      // Inicialização
-      function init(){
-        document.body.addEventListener('click', onBodyClick, false);
-        document.body.addEventListener('input', onBodyInput, false);
-        document.body.addEventListener('change', onBodyChange, false);
-        calcularTotais();
-      }
-
-      if (document.readyState === 'loading'){
-        document.addEventListener('DOMContentLoaded', init);
+      if (!total || total === 0){
+        html = `
+          <div class="analise-item">
+            <span class="analise-icon" aria-hidden="true">i</span>
+            <span class="analise-text">Preencha os valores para ver sua análise.</span>
+          </div>
+        `;
+      } else if (total < 500){
+        html = `
+          <div class="analise-item">
+            <span class="analise-icon" aria-hidden="true">OK</span>
+            <span class="analise-text">Investimento baixo — execução rápida é possível.</span>
+          </div>
+          <div class="analise-item">
+            <span class="analise-icon" aria-hidden="true">%</span>
+            <span class="analise-text">Reserva sugerida (20%): ${formatarMoeda(total * 0.2)}.</span>
+          </div>
+        `;
+      } else if (total < 2000){
+        html = `
+          <div class="analise-item">
+            <span class="analise-icon" aria-hidden="true">!</span>
+            <span class="analise-text">Investimento moderado — planeje as etapas antes de gastar.</span>
+          </div>
+          <div class="analise-item">
+            <span class="analise-icon" aria-hidden="true">%</span>
+            <span class="analise-text">Com reserva (20%): ${formatarMoeda(total * 1.2)}.</span>
+          </div>
+          <div class="analise-item">
+            <span class="analise-icon" aria-hidden="true">→</span>
+            <span class="analise-text">Pesquise linhas de microcrédito e apoios locais.</span>
+          </div>
+        `;
       } else {
-        init();
+        html = `
+          <div class="analise-item">
+            <span class="analise-icon" aria-hidden="true">!</span>
+            <span class="analise-text">Investimento alto — valide a proposta e o canal de vendas antes.</span>
+          </div>
+          <div class="analise-item">
+            <span class="analise-icon" aria-hidden="true">%</span>
+            <span class="analise-text">Com reserva (20%): ${formatarMoeda(total * 1.2)}.</span>
+          </div>
+          <div class="analise-item">
+            <span class="analise-icon" aria-hidden="true">↓</span>
+            <span class="analise-text">Revise o que pode ser adiado ou realizado com menor custo.</span>
+          </div>
+          <div class="analise-item">
+            <span class="analise-icon" aria-hidden="true">+</span>
+            <span class="analise-text">Considere parceiros/sócios para dividir o investimento.</span>
+          </div>
+        `;
       }
-    })();
+
+      container.innerHTML = html;
+    }
+
+    // ======================
+    // Dinâmica de itens
+    // ======================
+    function adicionarItem(categoria){
+      const container = document.getElementById(`${categoria}-container`);
+      const idx = container.querySelectorAll('.item-input').length + 1;
+      const wrapper = document.createElement('div');
+      wrapper.className = 'item-input';
+      const prefixId = {
+        equipamentos: 'equip',
+        materiaprima: 'mp',
+        marketing: 'mkt',
+        formalizacao: 'form',
+        outros: 'out'
+      }[categoria] || 'it';
+
+      wrapper.innerHTML = `
+        <label class="sr-only" for="${prefixId}-nome-${idx}">Descrição do item</label>
+        <input id="${prefixId}-nome-${idx}" type="text" placeholder="Descreva o item" class="item-nome" aria-label="Descrição do item em ${categoria}">
+        <label class="sr-only" for="${prefixId}-valor-${idx}">Valor do item</label>
+        <input id="${prefixId}-valor-${idx}" type="number" placeholder="0" min="0" step="0.01" class="item-valor" data-categoria="${categoria}" aria-label="Valor do item em ${categoria}">
+        <button class="btn-remove" type="button" title="Remover item" aria-label="Remover item">×</button>
+      `;
+      container.appendChild(wrapper);
+
+      // Eventos
+      wrapper.querySelector('.item-valor').addEventListener('input', calcularTotais);
+      wrapper.querySelector('.btn-remove').addEventListener('click', () => removerItem(wrapper));
+    }
+
+    function removerItem(elementOrButton){
+      const item = elementOrButton.classList?.contains('item-input') ? elementOrButton : elementOrButton.closest('.item-input');
+      if(!item) return;
+      const container = item.parentElement;
+      if (container.children.length > 1){
+        item.remove();
+        calcularTotais();
+      } else {
+        alert('Mantenha pelo menos um campo em cada categoria.');
+      }
+    }
+
+    // ======================
+    // Exportar .txt
+    // ======================
+    function salvarCalculadora(){
+      let conteudo = 'SIMULADOR DE CUSTOS INICIAIS — PROSPERA RIO\n';
+      conteudo += '='.repeat(60) + '\n\n';
+
+      let totalGeral = 0;
+
+      CATEGORIAS.forEach(cat => {
+        const titulo = {
+          equipamentos:'EQUIPAMENTOS E FERRAMENTAS',
+          materiaprima:'MATÉRIA-PRIMA E ESTOQUE INICIAL',
+          marketing:'COMUNICAÇÃO E MARKETING',
+          formalizacao:'FORMALIZAÇÃO E DOCUMENTOS',
+          outros:'OUTROS CUSTOS'
+        }[cat] || cat.toUpperCase();
+
+        conteudo += titulo + '\n';
+        conteudo += '-'.repeat(titulo.length) + '\n';
+
+        const blocos = document.querySelectorAll(`#${cat}-container .item-input`);
+        let subtotal = 0;
+
+        blocos.forEach(b => {
+          const nome = (b.querySelector('.item-nome')?.value || '').trim() || 'Item sem nome';
+          const valor = parseFloat(b.querySelector('.item-valor')?.value || 0);
+          subtotal += (valor || 0);
+          conteudo += `  • ${nome}: ${formatarMoeda(valor)}\n`;
+        });
+
+        conteudo += `Subtotal: ${formatarMoeda(subtotal)}\n\n`;
+        totalGeral += subtotal;
+      });
+
+      conteudo += '='.repeat(60) + '\n';
+      conteudo += `TOTAL GERAL: ${formatarMoeda(totalGeral)}\n`;
+      conteudo += '='.repeat(60) + '\n';
+
+      const blob = new Blob([conteudo], { type: 'text/plain;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'Simulador_Custos_Iniciais_Prospera_Rio.txt';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    }
+
+    // ======================
+    // Inicialização
+    // ======================
+    function conectarInputsIniciais(){
+      document.querySelectorAll('.item-valor').forEach(i => i.addEventListener('input', calcularTotais));
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      conectarInputsIniciais();
+      calcularTotais();
+      // Conecta botões remover iniciais
+      document.querySelectorAll('.btn-remove').forEach(btn => {
+        btn.addEventListener('click', (e) => removerItem(e.currentTarget));
+      });
+    });
   </script>
 </body>
 </html>
